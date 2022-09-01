@@ -50,7 +50,7 @@ function onLoadMoreClick() {
     scrollSmooth();
   }).catch(() => {
     Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
-    
+    hideLoadMore();
   });
 }
 

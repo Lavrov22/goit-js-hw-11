@@ -1,9 +1,8 @@
-import axios from "axios";
+
 import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { fetchImages, resetPage } from "./js/fetchImages";
-
 let searchQuery = '';
 
 const refs = {
@@ -12,7 +11,6 @@ const refs = {
   loadMore: document.querySelector('.load-more'),
 }
 
-console.dir(refs.gallery);
 
 refs.form.addEventListener('submit', onSubmitClick);
 refs.loadMore.addEventListener('click', onLoadMoreClick);
@@ -36,7 +34,6 @@ function onSubmitClick(e) {
     return data;
   }).then(data => {
     renderSearchQuery(data);
-    scrollSmooth();
     enableLoadMore();
   }).catch(error => {
     hideLoadMore();

@@ -1,6 +1,6 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-.body{
+body{
     padding-top: 150px;
 }
 .search-form{
@@ -50,7 +50,7 @@ input{
     align-items: center;
 }
 
-.submit{
+button{
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;

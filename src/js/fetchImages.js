@@ -77,4 +77,4 @@ async function fetchImages(name) {
 function resetPage() {
   page = 1;
 }
-export { fetchImages, resetPage };
+export { fetchImages, resetPage, page };

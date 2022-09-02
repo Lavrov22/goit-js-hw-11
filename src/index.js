@@ -2,7 +2,7 @@
 import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-import { fetchImages, resetPage } from "./js/fetchImages";
+import { fetchImages, resetPage, page } from "./js/fetchImages";
 let searchQuery = '';
 
 const refs = {
@@ -34,6 +34,9 @@ function onSubmitClick(e) {
     return data;
   }).then(data => {
     renderSearchQuery(data);
+    if (data.hits.length / 40 < page - 1) {
+      hideLoadMore();
+    }
     enableLoadMore();
   }).catch(error => {
     hideLoadMore();
